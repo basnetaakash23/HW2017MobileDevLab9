@@ -10,12 +10,8 @@ import android.widget.Button;
 import java.util.Arrays;
 import java.util.List;
 
-import static android.R.attr.scaleX;
 
 
-public class MainActivity extends AppCompatActivity {
-
-    @Override
     public class MainActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     int duration = 3000;
                     // Animate the shape width, top, bottom, and color.
-                    float scaleToFillWidth = (float)rootView.getWidth() / shapeView.getWidth();
+                    float scaleToFillWidth = (float) rootView.getWidth() / shapeView.getWidth();
                     ObjectAnimator shape2ScaleXAnimator =
-                            ObjectAnimator.ofFloat(shapeView,“scaleX”, 1f, scaleToFillWidth).setDuration(duration);
+                            ObjectAnimator.ofFloat(shapeView, "scaleX", 1f, scaleToFillWidth).setDuration(duration);
                     shape2ScaleXAnimator.start();
 
                     // Set the top to be the top of the first TextView.
@@ -63,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
                         // Get a random value between negative one-half-screen-width, and positive one-half-screen-width.
                         // Set that as the x position of the TextView.
-                        float randomOffset = (float)(Math.random() * rootView.getWidth()) - rootView.getWidth()/2;
-                        ObjectAnimator xAnimator = ObjectAnimator.ofFloat(v, "x", v.getX(), v.getX()+randomOffset).setDuration(duration);
+                        float randomOffset = (float) (Math.random() * rootView.getWidth()) - rootView.getWidth() / 2;
+                        ObjectAnimator xAnimator = ObjectAnimator.ofFloat(v, "x", v.getX(), v.getX() + randomOffset).setDuration(duration);
                         xAnimator.start();
                     }
 
@@ -74,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                             ObjectAnimator.ofFloat(button, "y", button.getY(), rootView.getBottom()).setDuration(duration);
                     buttonYAnimator.start();
 
-                    float randomRotation = (float)(Math.random() * 40) - 20;
+                    float randomRotation = (float) (Math.random() * 40) - 20;
                     ObjectAnimator rotationAnimator =
                             ObjectAnimator.ofFloat(button, "rotation", 0f, randomRotation).setDuration(duration);
                     rotationAnimator.start();
@@ -87,4 +83,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-}
+
+
